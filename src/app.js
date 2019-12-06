@@ -2,6 +2,7 @@ const path = require('path')
 
 const express = require('express')
 const app =express()
+const port = process.env.PORT || 3000
 const hbs = require('hbs')
 
 const geocode = require('./utils/geocode')
@@ -64,21 +65,6 @@ app.get('/weather', (req, res)=>{
     
 })
 
-// geocode('Los Angeles', (error, data) => {
-//     if (error) {
-//         return console.log('Error', error)
-
-//     }
-
-//     forecast(data.latitude, data.longitude, (error, forecastdata) => {
-//         if (error) {
-//             return console.log('Error', error)
-//         }
-
-//         console.log('Data', forecastdata)
-//         console.log(data.location)
-//     })
-// })
 
 app.get('/help/*', (req, res) => {
     res.status(404)
@@ -94,8 +80,8 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
 
-    console.log('server started')
+    console.log('server started on port'+port)
     
 })
