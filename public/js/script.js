@@ -17,7 +17,7 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-one')
 const messageTwo = document.querySelector('#message-two')
 
-messageOne.textContent = 'from JS placeholder'
+messageOne.textContent = 'from JS placeholder:loading'
 messageTwo.textContent = ''
 
 weatherForm.addEventListener('submit', (e)=>{
